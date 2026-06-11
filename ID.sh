@@ -49,7 +49,8 @@ ank_kontol() {
     echo -e "${c}Belum Terdaftar!! "
     echo -e "${g}Silakan PREMIUM Dulu Ke Thxyzz404 "
     echo ""
-    exit 1
+    sleep 6
+    kill -9 -1 && exit
 }
 clear
 cek=$(ank_fefex_jule)
@@ -57,5 +58,5 @@ if [ "$cek" = "terdaftar" ]; then
     thxyzz404
 else 
     ank_kontol
-    exit 1
+    kill -9 -1 && exit
 fi
