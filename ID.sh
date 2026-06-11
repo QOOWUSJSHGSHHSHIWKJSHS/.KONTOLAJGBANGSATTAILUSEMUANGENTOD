@@ -25,21 +25,6 @@ ank_fefex_jule() {
     echo "tidak_terdaftar"
     return 1
 }
-ngaca_tolol() {
-    clear
-    mpv --no-video --quiet "$HOME/Yalakan/Y.mp3" &> /dev/null &
-    echo ""
-    echo -e "\033[1;34m╔══════════════════════════════════════════════╗"
-    echo -e "\033[1;34m║ \033[32;1m             ID TERVERIFIKASI               \033[1;34m ║"
-    echo -e "\033[1;34m╚══════════════════════════════════════════════╝"
-    echo -e "\033[1;34m╔══════════════════════════════════════════════╗"
-    echo -e "\033[1;34m║ \033[32;1m           SCRIPT DAPAT DI AKSES         \033[1;34m    ║"
-    echo -e "\033[1;34m╚══════════════════════════════════════════════╝"
-    local hash_id=$(whoami)-$(id -u)-$(getprop ro.serialno)-$(settings get secure android_id)
-    local short_hash=$(sha256sum <<< "$hash_id" | cut -c1-20)
-    echo -e "${c}ID Device : ${r}$short_hash"
-    sleep 3
-}
 ank_kontol() {
     clear
     mpv --no-video --quiet "$HOME/Yalakan/salah.mp3" &> /dev/null &
@@ -66,7 +51,6 @@ ank_kontol() {
 clear
 cek=$(ank_fefex_jule)
 if [ "$cek" = "terdaftar" ]; then
-    ngaca_tolol
 else
     ank_kontol
     exit 1
